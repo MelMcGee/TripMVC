@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Marilees_Trip.Models.Transport>
+
+@{
+    ViewBag.Title = "Add New Departure";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<!--ugh, Visual studio uses a table in their template. Later, update this to divs-->
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FromCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ToCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartAt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArriveAt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TransportType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vendor)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FromCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ToCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartAt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArriveAt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TransportType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vendor)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TransportID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TransportID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TransportID })
+        </td>
+    </tr>
+}
+
+</table>

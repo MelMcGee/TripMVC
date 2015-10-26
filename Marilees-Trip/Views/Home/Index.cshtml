@@ -1,0 +1,289 @@
+﻿@{
+    ViewBag.Title = "Trip Switch";
+}
+
+<div class="row main-search">
+    <div class="col-md-8 col-lg-offset-2">
+
+        <section class="search-wrapper">
+            <div class="container">
+                <div class="searchbar col-md-12" role="navigation">
+                    <h1>Get There Faster!</h1>
+                    <h3>@ViewBag.Message</h3>
+                    <form accept-charset="UTF-8"  class="search_5" id="new_search" method="post" role="form">
+                        <div style="display:none">
+                            <input name="utf8" type="hidden" value="✓">
+                            <input name="authenticity_token" type="hidden" value="MUjs5nvxcGMoqXrwVKiOY8t87Khu3KA4tQJcmrfb5ls=">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 form-group from" data-title="Where are you leaving from?" data-toggle="tooltip" data-trigger="manual">
+                                <label for="search_from">From</label>
+                                <span class="twitter-typeahead" style="position: relative; display: inline-block; direction: ltr;">
+                                    <input type="text" class="tt-hint" disabled="" autocomplete="off" spellcheck="false" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(238, 238, 238);"><input id="search_from" name="search[from]" placeholder="e.g., New York" type="text" class="tt-input" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: 'Open sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 17px; font-style: normal; font-variant: normal; font-weight: 600; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; right: auto;">
+                                        <div class="tt-dataset-ssAutocomplete"></div>
+                                        <div class="tt-dataset-geocoder"></div>
+                                    </span>
+                                </span>
+                                <input id="search_start_latitude" name="search[start_latitude]" type="hidden">
+                                <input id="search_start_longitude" name="search[start_longitude]" type="hidden">
+                                <input id="search_start_mode" name="search[start_mode]" type="hidden">
+                                <input id="search_start_mode_id" name="search[start_mode_id]" type="hidden">
+                            </div>
+                            <div class="col-md-3 form-group going_to" data-title="Where would you like to go?" data-toggle="tooltip" data-trigger="manual">
+                                <label for="search_going_to">To</label>
+                                <span class="twitter-typeahead" style="position: relative; display: inline-block; direction: ltr;">
+                                    <input type="text" class="tt-hint" disabled="" autocomplete="off" spellcheck="false" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(238, 238, 238);"><input id="search_going_to" name="search[going_to]" placeholder="e.g., Chicago" type="text" class="tt-input" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: 'Open sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 17px; font-style: normal; font-variant: normal; font-weight: 600; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; right: auto;">
+                                        <div class="tt-dataset-ssAutocomplete"></div>
+                                        <div class="tt-dataset-geocoder"></div>
+                                    </span>
+                                </span>
+                                <input id="search_end_latitude" name="search[end_latitude]" type="hidden">
+                                <input id="search_end_longitude" name="search[end_longitude]" type="hidden">
+                                <input id="search_end_mode" name="search[end_mode]" type="hidden">
+                                <input id="search_end_mode_id" name="search[end_mode_id]" type="hidden">
+                                <input id="search_strategy" name="search[strategy]" type="hidden">
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-6 col-xs-6 date-from form-group" data-min-date="@DateTime.Now" data-title="When would you like to go?" data-toggle="tooltip" data-trigger="manual">
+                                        <label for="search_departure_at">Departure</label>
+                                        <input id="search_departure_at" name="search[departure_at]" placeholder="e.g., @DateTime.Now;" type="text" class="dateField">
+                                    </div>
+                                    <div class="col-md-6 col-xs-6 date-to form-group" data-min-date="@DateTime.Now" data-title-bahncard-combination-incorrect="Please select only one type of BahnCard" data-title-date-in-the-past="Departure date must be in the future." data-title-incorrect-passenger-count="We currently only support 1 to 5 passengers." data-title-invalid-date-format="Please enter a valid date. (or use the handy datepicker)" data-title-invalid-return-date="The return date must be after the date of departure." data-title-invalid-search-submit="We're sorry, we ran into a few issues while trying to build your search:" data-title-max-search-attempts="Max search attempts exceeded" data-title-missing-date-from="When would you like to go?" data-title-missing-from="Where are you leaving from?" data-title-missing-going-to="Where would you like to go?" data-title-missing-search-type="There was a problem with your search. Please try a new one." data-title-missing-vehicle="Please select at least one type of vehicle" data-title-no-times-available="We're sorry; there are no current times available" data-title-noscript-description="fromAtoB requires JavaScript to be enabled in order for our site to work. Please check your browser settings
+to ensure it is enabled." data-title-noscript-header="Javascript is disabled in your browser" data-title-passenger-age-is-not-number="Passenger age must be a number" data-title-please-reload="We're sorry; an error has occurred. Please reload." data-title-something-went-wrong="Something Went Wrong" data-title-use-autocomplete="Please choose from our autocomplete suggestions" data-toggle="tooltip" data-trigger="manual">
+                                        <label for="search_return_at">Return</label>
+                                        <input id="search_return_at" name="search[return_at]" placeholder="optional" type="text" class="dateField">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-2 search">
+                                <input class="search-button" id="start_search" name="commit" type="submit" value="Search">
+                                <div class="row">
+                                    <div class="col-md-12 advanced-link-wrapper">
+                                        <a href="#" id="advanced-options-link">
+                                            Advanced options
+                                            <i class="icon-plus2" style="display: inline;"></i>
+                                            <i class="icon-minus2" style="display: none;"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8 advanced-options" style="display: none;">
+                                <div class="row">
+                                    <div class="col-md-12 vehicle">
+                                        <div class="title">
+                                            Vehicle
+                                        </div>
+                                        <div class="field">
+                                            <label for="search_train">
+                                                <input name="search[train]" type="hidden" value="0"><input checked="checked" id="search_train" name="search[train]" type="checkbox" value="1">
+                                                Train
+                                            </label>
+                                            <label for="search_plane">
+                                                <input name="search[plane]" type="hidden" value="0"><input checked="checked" id="search_plane" name="search[plane]" type="checkbox" value="1">
+                                                Plane
+                                            </label>
+                                            <label for="search_bus">
+                                                <input name="search[bus]" type="hidden" value="0"><input checked="checked" id="search_bus" name="search[bus]" type="checkbox" value="1">
+                                                Long distance bus
+                                            </label>
+                                            <label for="search_ride_share">
+                                                <input name="search[ride_share]" type="hidden" value="0"><input checked="checked" id="search_ride_share" name="search[ride_share]" type="checkbox" value="1">
+                                                Ride share
+                                            </label>
+                                            <label for="search_rental_car">
+                                                <input name="search[rental_car]" type="hidden" value="0"><input checked="checked" id="search_rental_car" name="search[rental_car]" type="checkbox" value="1">
+                                                Rental Car
+                                            </label>
+                                            <label for="search_taxi">
+                                                <input name="search[taxi]" type="hidden" value="0"><input checked="checked" id="search_taxi" name="search[taxi]" type="checkbox" value="1">
+                                                Taxi
+                                            </label>
+                                            <label for="search_general_dynamic_car">
+                                                <input name="search[general_dynamic_car]" type="hidden" value="0"><input checked="checked" id="search_general_dynamic_car" name="search[general_dynamic_car]" type="checkbox" value="1">
+                                                Car
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 passengers">
+                                        <div class="row">
+                                            <div class="col-md-10">
+                                                <div class="row passenger">
+                                                    <div class="col-md-12">
+                                                        <div class="title">
+                                                            Passenger #
+                                                        </div>
+                                                        <div class="field">
+                                                            <input id="search_passengers_attributes_0_age" name="search[passengers_attributes][0][age]" type="text" value="32">
+                                                            <label for="search_passengers_attributes_0_age">Age</label>
+                                                        </div>
+                                                        <div class="field">
+                                                            <select id="search_passengers_attributes_0_discount" name="search[passengers_attributes][0][discount]">
+                                                                <option value="">None</option>
+                                                                <option value="BahnCard 25, 1. Klasse">BahnCard 25, 1. Klasse</option>
+                                                                <option value="BahnCard 25, 2. Klasse">BahnCard 25, 2. Klasse</option>
+                                                                <option value="BahnCard 50, 1. Klasse">BahnCard 50, 1. Klasse</option>
+                                                                <option value="BahnCard 50, 2. Klasse">BahnCard 50, 2. Klasse</option>
+                                                            </select>
+                                                            <label for="search_passengers_attributes_0_discount">Discount</label>
+                                                        </div>
+                                                        <div class="field">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="disabled passenger row">
+                                                    <div class="col-md-12">
+                                                        <div class="title">
+                                                            Passenger #
+                                                        </div>
+                                                        <div class="field">
+                                                            <input disabled="disabled" id="search_passengers_attributes_1_age" name="search[passengers_attributes][1][age]" type="text" value="32">
+                                                            <label for="search_passengers_attributes_1_age">Age</label>
+                                                        </div>
+                                                        <div class="field">
+                                                            <select disabled="disabled" id="search_passengers_attributes_1_discount" name="search[passengers_attributes][1][discount]">
+                                                                <option value="">None</option>
+                                                                <option value="BahnCard 25, 1. Klasse">BahnCard 25, 1. Klasse</option>
+                                                                <option value="BahnCard 25, 2. Klasse">BahnCard 25, 2. Klasse</option>
+                                                                <option value="BahnCard 50, 1. Klasse">BahnCard 50, 1. Klasse</option>
+                                                                <option value="BahnCard 50, 2. Klasse">BahnCard 50, 2. Klasse</option>
+                                                            </select>
+                                                            <label for="search_passengers_attributes_1_discount">Discount</label>
+                                                        </div>
+                                                        <div class="field">
+                                                            <a class="remove-passenger-button" href="#">
+                                                                <i class="icon-minus"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="disabled passenger row">
+                                                    <div class="col-md-12">
+                                                        <div class="title">
+                                                            Passenger #
+                                                        </div>
+                                                        <div class="field">
+                                                            <input disabled="disabled" id="search_passengers_attributes_2_age" name="search[passengers_attributes][2][age]" type="text" value="32">
+                                                            <label for="search_passengers_attributes_2_age">Age</label>
+                                                        </div>
+                                                        <div class="field">
+                                                            <select disabled="disabled" id="search_passengers_attributes_2_discount" name="search[passengers_attributes][2][discount]">
+                                                                <option value="">None</option>
+                                                                <option value="BahnCard 25, 1. Klasse">BahnCard 25, 1. Klasse</option>
+                                                                <option value="BahnCard 25, 2. Klasse">BahnCard 25, 2. Klasse</option>
+                                                                <option value="BahnCard 50, 1. Klasse">BahnCard 50, 1. Klasse</option>
+                                                                <option value="BahnCard 50, 2. Klasse">BahnCard 50, 2. Klasse</option>
+                                                            </select>
+                                                            <label for="search_passengers_attributes_2_discount">Discount</label>
+                                                        </div>
+                                                        <div class="field">
+                                                            <a class="remove-passenger-button" href="#">
+                                                                <i class="icon-minus"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="disabled passenger row">
+                                                    <div class="col-md-12">
+                                                        <div class="title">
+                                                            Passenger #
+                                                        </div>
+                                                        <div class="field">
+                                                            <input disabled="disabled" id="search_passengers_attributes_3_age" name="search[passengers_attributes][3][age]" type="text" value="32">
+                                                            <label for="search_passengers_attributes_3_age">Age</label>
+                                                        </div>
+                                                        <div class="field">
+                                                            <select disabled="disabled" id="search_passengers_attributes_3_discount" name="search[passengers_attributes][3][discount]">
+                                                                <option value="">None</option>
+                                                                <option value="BahnCard 25, 1. Klasse">BahnCard 25, 1. Klasse</option>
+                                                                <option value="BahnCard 25, 2. Klasse">BahnCard 25, 2. Klasse</option>
+                                                                <option value="BahnCard 50, 1. Klasse">BahnCard 50, 1. Klasse</option>
+                                                                <option value="BahnCard 50, 2. Klasse">BahnCard 50, 2. Klasse</option>
+                                                            </select>
+                                                            <label for="search_passengers_attributes_3_discount">Discount</label>
+                                                        </div>
+                                                        <div class="field">
+                                                            <a class="remove-passenger-button" href="#">
+                                                                <i class="icon-minus"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="disabled passenger row">
+                                                    <div class="col-md-12">
+                                                        <div class="title">
+                                                            Passenger #
+                                                        </div>
+                                                        <div class="field">
+                                                            <input disabled="disabled" id="search_passengers_attributes_4_age" name="search[passengers_attributes][4][age]" type="text" value="32">
+                                                            <label for="search_passengers_attributes_4_age">Age</label>
+                                                        </div>
+                                                        <div class="field">
+                                                            <select disabled="disabled" id="search_passengers_attributes_4_discount" name="search[passengers_attributes][4][discount]">
+                                                                <option value="">None</option>
+                                                                <option value="BahnCard 25, 1. Klasse">BahnCard 25, 1. Klasse</option>
+                                                                <option value="BahnCard 25, 2. Klasse">BahnCard 25, 2. Klasse</option>
+                                                                <option value="BahnCard 50, 1. Klasse">BahnCard 50, 1. Klasse</option>
+                                                                <option value="BahnCard 50, 2. Klasse">BahnCard 50, 2. Klasse</option>
+                                                            </select>
+                                                            <label for="search_passengers_attributes_4_discount">Discount</label>
+                                                        </div>
+                                                        <div class="field">
+                                                            <a class="remove-passenger-button" href="#">
+                                                                <i class="icon-minus"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-2">
+                                                <a href="#" id="add-passenger">
+                                                    Add passenger
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+
+        </section>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>A Feature</h2>
+        <p>
+            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+            enables a clean separation of concerns and gives you full control over markup
+            for enjoyable, agile development.
+        </p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Another Feature</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Some Feature Here</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>
