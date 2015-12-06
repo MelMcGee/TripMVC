@@ -1,9 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marilees-Trip", "Marilees-Trip\Marilees-Trip.csproj", "{8E699D02-A47B-4E23-A285-4C704D96CA7B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5C7B59D4-5961-496A-8CCC-0B2DF52A8C2E}"
+	ProjectSection(SolutionItems) = preProject
+		AppSettingsSecrets.config = AppSettingsSecrets.config
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
