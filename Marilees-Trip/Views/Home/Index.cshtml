@@ -102,7 +102,7 @@ to ensure it is enabled." data-title-noscript-header="Javascript is disabled in 
 </div>
 <img src="~/Content/images/ajax-loader.gif" id="spinningImg" style="display:none; position:absolute;top:40%;left:40%;z-index:10;" />
 
-<div class="results row">
+<div class="results row" id="editor" >
     <div class="col-md-12">
         <h1>Results</h1>
     </div>
@@ -153,8 +153,9 @@ to ensure it is enabled." data-title-noscript-header="Javascript is disabled in 
         $("#date").attr( "placeholder", dateVal);
 
         var qpxResponse = {};
-
+        var bindingsApplied = false;
         $(document).ready(function () {
+
             $(".dateField").datepicker({
                 minDate: 0,
                 maxDate: '+2Y',
@@ -179,11 +180,17 @@ to ensure it is enabled." data-title-noscript-header="Javascript is disabled in 
                 })
                 .done(function (response) {
                     console.log(response);
-                    qpxResponse = ko.mapping.fromJS(response);  //populate the flights
-                    ko.applyBindings(qpxResponse); //using knockout to quickly map object to web page elements
-                    //Clean knockout up! Apply bindings error when calling more than
-                    //one request.
+                    if (bindingsApplied == false) {
+                         
+                        qpxResponse = ko.mapping.fromJS(response);  //populate the flights
+                        ko.applyBindings(qpxResponse); //using knockout to quickly map object to web page elements
+                        bindingsApplied = true;
 
+                    }
+                    else {
+                        ko.mapping.fromJS(response, qpxResponse);
+                    }
+                    
                     //hide spinning gif here (set image display to hide)
                     $("#spinningImg").hide();
                     //show results
