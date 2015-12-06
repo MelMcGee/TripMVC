@@ -146,16 +146,21 @@ to ensure it is enabled." data-title-noscript-header="Javascript is disabled in 
 </div>
 
     <script>
-        //Note: This view needs to be cleaned up alot. Also, knockout needs to be adjusted so
-        //the multiple bindings error doesn't occur
+        //Note: This view needs to be cleaned up alot. 
         
+        //set placeholder for date to today, in proper format
         var dateVal = "e.g., @DateTime.Now.ToString("yyyy-MM-dd")";
         $("#date").attr( "placeholder", dateVal);
 
+        //get json response object ready for use by knockout
         var qpxResponse = {};
+
+        //needed so we don't apply bindings multiple times when refreshing knockout binding to json
         var bindingsApplied = false;
+
         $(document).ready(function () {
 
+            //set up the datepicker. Format is necessary for Google QPX API
             $(".dateField").datepicker({
                 minDate: 0,
                 maxDate: '+2Y',
@@ -166,7 +171,7 @@ to ensure it is enabled." data-title-noscript-header="Javascript is disabled in 
             $(".results").hide();
             //hide spinning gif here (set image display to hide)
             $("#spinningImg").hide();
-            var applied = false;
+
             $("#checkAir").click(function () {
                 //hide the results div
                 $(".results").hide();
@@ -181,11 +186,9 @@ to ensure it is enabled." data-title-noscript-header="Javascript is disabled in 
                 .done(function (response) {
                     console.log(response);
                     if (bindingsApplied == false) {
-                         
                         qpxResponse = ko.mapping.fromJS(response);  //populate the flights
                         ko.applyBindings(qpxResponse); //using knockout to quickly map object to web page elements
                         bindingsApplied = true;
-
                     }
                     else {
                         ko.mapping.fromJS(response, qpxResponse);
@@ -197,6 +200,8 @@ to ensure it is enabled." data-title-noscript-header="Javascript is disabled in 
                     $(".results").show(); //show the results div
                 });
             });
+
+            //open /close advanced options on link click
             $("#advanced-options-link").click(function () {
                 $(".advanced-options").toggle();
             });
