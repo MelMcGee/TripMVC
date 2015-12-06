@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using Marilees_Trip.Models;
+using System.Diagnostics;
 
 namespace Marilees_Trip.Controllers
 {
@@ -13,10 +11,17 @@ namespace Marilees_Trip.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Index(string fromCity, string toCity, string departDate, string returnDate)
+        public JsonResult PostToFlights(QPX.QPXModel data)
         {
-            ViewBag.Message = "to " + toCity;
-            return View();
+            // test here
+            Debug.Assert(data != null);
+            QPX flights = new QPX();
+
+            //TODO: Enter Your api key from google in the appid string, below.
+            string appid = "";
+            //enter your appid here
+            string url = "https://www.googleapis.com/qpxExpress/v1/trips/search?key=" + appid;
+            return Json(flights.PostToFlights(url, data));
         }
 
         public ActionResult About()
