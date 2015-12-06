@@ -18,8 +18,8 @@ namespace Marilees_Trip.Controllers
             QPX flights = new QPX();
 
             //TODO: Enter Your key from google in the appid string, below.
-            string appid = "AIzaSyCVqTFz2c9UytYbGfz-WTq5pYp4caGAgw0";
-            //enter your appid here
+            string appid = ""; //FYI: old id in history has been rekeyed.
+      
             string url = "https://www.googleapis.com/qpxExpress/v1/trips/search?key=" + appid;
             return Json(flights.PostToFlights(url, data));
         }
